@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { HOME_IMAGES } from '@constant/homeImage';
-import { StyledImage } from '@pages/Home';
+import { StyledImage } from '@styles/common.style';
 
 const ImageRotator = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
