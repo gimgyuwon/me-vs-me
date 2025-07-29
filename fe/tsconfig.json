@@ -1,7 +1,28 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "ES2020"],
+    // "types": ["node", "react"],
+    "moduleResolution": "bundler",
+    "module": "Preserve",
+    "typeRoots": ["node_modules/@types"],
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@": ["src"],
+      "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"],
+      "@constant": ["src/constant"],
+      "@constant/*": ["src/constant/*"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@styles": ["src/styles"],
+      "@styles/*": ["src/styles/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
