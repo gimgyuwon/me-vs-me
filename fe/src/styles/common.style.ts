@@ -11,6 +11,13 @@ export const StyledCenterParagraph = styled.p`
   text-align: center;
 `;
 
+export const StyledSubText = styled.p`
+  font-size: 0.5rem;
+  color: #888;
+  text-align: center;
+  margin: 0.75rem 0;
+`;
+
 export const StyledImage = styled.img`
   width: 100%;
   max-width: 300px;

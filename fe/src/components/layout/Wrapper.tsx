@@ -7,6 +7,10 @@ const Wrapper = styled.div`
   margin: 0 auto;
   min-height: 100vh;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export default Wrapper;
