@@ -23,7 +23,7 @@ const Name = () => {
 
   return (
     <>
-      <StyledImage src="/images/name/user.gif" maxWidth="70px" />
+      <StyledImage src="/images/user.gif" maxWidth="70px" />
       <StyledCenterTitle>당신을 뭐라고 부르면 될까요?</StyledCenterTitle>
       <StyledInput
         type="text"
