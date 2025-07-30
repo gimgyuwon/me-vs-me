@@ -48,6 +48,19 @@ export const StyledImage = styled.img<StyledImageProps>`
   margin: 20px auto;
 `;
 
+export const StyledLinkBox = styled.p`
+  font-size: 1rem;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: #333;
+  background-color: #f0f0f0;
+`;
+
 export const StyledButton = styled.button`
   width: 350px;
   height: 50px;

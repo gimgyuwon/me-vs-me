@@ -14,7 +14,7 @@ const Name = () => {
   const [name, setName] = useState('');
 
   const handleClickNext = () => {
-    if (name.trim()) navigate(`/link/${id}?name=${encodeURIComponent(name)}`);
+    if (name.trim()) navigate(`/link/${id}`);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

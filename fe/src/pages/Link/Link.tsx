@@ -3,15 +3,23 @@ import {
   StyledCenterParagraph,
   StyledCenterTitle,
   StyledImage,
+  StyledLinkBox,
   StyledWobbleButton,
 } from '@styles/common.style';
-import { useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Link = () => {
   const { id } = useParams();
-  const { search } = useLocation();
-  const params = new URLSearchParams(search);
-  const name = params.get('name');
+  const navigate = useNavigate();
+  const voteUrl = `${window.location.origin}/vote/${id}`;
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(voteUrl);
+  };
+
+  const handleResultCheckClick = () => {
+    navigate(`/result/${id}`);
+  };
 
   return (
     <>
@@ -20,10 +28,11 @@ const Link = () => {
       <StyledCenterParagraph>
         친구들에게 공유해서 나에 대한 생각을 들어보세요
       </StyledCenterParagraph>
-      <h1>{name}</h1>
-      <h2>{id}</h2>
-      <StyledButton>복사</StyledButton>
-      <StyledWobbleButton>결과 확인하기</StyledWobbleButton>
+      <StyledLinkBox>{voteUrl}</StyledLinkBox>
+      <StyledButton onClick={handleCopyClick}>링크 복사</StyledButton>
+      <StyledWobbleButton onClick={handleResultCheckClick}>
+        결과 확인하기
+      </StyledWobbleButton>
     </>
   );
 };
