@@ -36,6 +36,21 @@ export const StyledInput = styled.input`
   }
 `;
 
+export const StyledTextRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 0.5rem;
+`;
+
+export const StyledImageRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem 0;
+`;
+
 interface StyledImageProps {
   maxWidth?: string;
 }

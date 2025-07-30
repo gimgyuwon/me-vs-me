@@ -1,0 +1,40 @@
+export const RESULT_MAP: Record<string, string> = {
+  aaaa: '사람이 좋은 멋쟁이 일진 여우',
+  aaab: '사람이 좋은 귀요미 일진 여우',
+  aaba: '사람이 좋은 멋쟁이 모범생 여우',
+  aabb: '사람이 좋은 귀요미 모범생 여우',
+  abaa: '고독이 좋은 멋쟁이 일진 여우',
+  abab: '고독이 좋은 귀요미 일진 여우',
+  abba: '고독이 좋은 멋쟁이 모범생 여우',
+  abbb: '고독이 좋은 귀요미 모범생 여우',
+  baaa: '사람이 좋은 멋쟁이 일진 곰',
+  baab: '사람이 좋은 귀요미 일진 곰',
+  baba: '사람이 좋은 멋쟁이 모범생 곰',
+  babb: '사람이 좋은 귀요미 모범생 곰',
+  bbaa: '고독이 좋은 멋쟁이 일진 곰',
+  bbab: '고독이 좋은 귀요미 일진 곰',
+  bbba: '고독이 좋은 멋쟁이 모범생 곰',
+  bbbb: '고독이 좋은 귀요미 모범생 곰',
+};
+
+export const RESULT_COMPATIBILITY_MAP: Record<
+  string,
+  { good: string; bad: string }
+> = {
+  aaaa: { good: 'abbb', bad: 'bbab' },
+  aaab: { good: 'aabb', bad: 'bbaa' },
+  aaba: { good: 'abba', bad: 'bbba' },
+  aabb: { good: 'aaab', bad: 'bbaa' },
+  abaa: { good: 'bbbb', bad: 'baab' },
+  abab: { good: 'aabb', bad: 'bbaa' },
+  abba: { good: 'aaba', bad: 'bbab' },
+  abbb: { good: 'aaaa', bad: 'bbaa' },
+  baaa: { good: 'aaaa', bad: 'bbab' },
+  baab: { good: 'aaab', bad: 'abab' },
+  baba: { good: 'abba', bad: 'bbba' },
+  babb: { good: 'aabb', bad: 'abbb' },
+  bbaa: { good: 'aaaa', bad: 'aabb' },
+  bbab: { good: 'aaab', bad: 'baaa' },
+  bbba: { good: 'abba', bad: 'aaba' },
+  bbbb: { good: 'abbb', bad: 'abab' },
+};
