@@ -1,19 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
-import Wrapper from '@components/layout/Wrapper';
 import Home from '@pages/Home';
 import Link from '@pages/Link';
 import Name from '@pages/Name';
-import Footer from '@components/Footer';
+import { Layout } from '@components';
 
 const App = () => (
-  <Wrapper>
-    <Routes>
-      <Route path="/" element={<Home />} />
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
       <Route path="/name" element={<Name />} />
       <Route path="/link" element={<Link />} />
-    </Routes>
-
-    <Footer />
-  </Wrapper>
+    </Route>
+  </Routes>
 );
 export default App;
