@@ -4,9 +4,13 @@ import {
   StyledCenterTitle,
   StyledImage,
   StyledImageRow,
+  StyledLinkBox,
   StyledTextRow,
 } from '@styles/common.style';
-import { RESULT_COMPATIBILITY_MAP, RESULT_MAP } from '@constant/resultMap';
+import {
+  RESULT_COMPATIBILITY_MAP,
+  RESULT_DESCRIPMATION_MAP,
+} from '@constant/resultMap';
 
 const Result = () => {
   const resultKey = 'aaab';
@@ -15,15 +19,30 @@ const Result = () => {
   return (
     <>
       <StyledCenterParagraph>친구들이 선택한 나의 모습</StyledCenterParagraph>
-      <StyledCenterTitle>{RESULT_MAP[resultKey]}</StyledCenterTitle>
+      <StyledCenterTitle>
+        {RESULT_DESCRIPMATION_MAP[resultKey].title}
+      </StyledCenterTitle>
+      <StyledCenterParagraph>
+        {RESULT_DESCRIPMATION_MAP[resultKey].summary}
+      </StyledCenterParagraph>
       <StyledImage
         src={`/images/result_male/${resultKey}.svg`}
         alt={resultKey}
         $maxWidth="300px"
       />
+      <StyledCenterParagraph>
+        {RESULT_DESCRIPMATION_MAP[resultKey].emoji}
+      </StyledCenterParagraph>
+      <StyledCenterParagraph>
+        {RESULT_DESCRIPMATION_MAP[resultKey].talk}
+      </StyledCenterParagraph>
+      <StyledLinkBox>
+        {RESULT_DESCRIPMATION_MAP[resultKey].description}
+      </StyledLinkBox>
+
       <StyledTextRow>
-        <StyledCenterParagraph>나와 잘 맞는 타입</StyledCenterParagraph>
-        <StyledCenterParagraph>나와 안 맞는 타입</StyledCenterParagraph>
+        <StyledCenterParagraph>내 친구 사대천왕</StyledCenterParagraph>
+        <StyledCenterParagraph>운명의 앙숙</StyledCenterParagraph>
       </StyledTextRow>
       <StyledImageRow>
         <StyledImage
