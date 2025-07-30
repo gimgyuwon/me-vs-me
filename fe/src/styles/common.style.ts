@@ -23,7 +23,7 @@ const sizeMap = {
 
 export const StyledText = styled.p<TextProps>`
   text-align: ${({ align = 'center' }) => align || 'center'};
-  margin: 0;
+  margin: 0.5rem;
   font-size: ${({ size = 'md' }) => sizeMap[size]};
   font-weight: ${({ weight = 'normal' }) => weight};
   color: ${({ color }) => color || 'inherit'};
