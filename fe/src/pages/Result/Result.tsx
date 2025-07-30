@@ -17,7 +17,7 @@ const Result = () => {
       <StyledCenterParagraph>친구들이 선택한 나의 모습</StyledCenterParagraph>
       <StyledCenterTitle>{RESULT_MAP[resultKey]}</StyledCenterTitle>
       <StyledImage
-        src={`/images/result/${resultKey}.svg`}
+        src={`/images/result_male/${resultKey}.svg`}
         alt={resultKey}
         $maxWidth="300px"
       />
@@ -26,8 +26,11 @@ const Result = () => {
         <StyledCenterParagraph>나와 안 맞는 타입</StyledCenterParagraph>
       </StyledTextRow>
       <StyledImageRow>
-        <StyledImage src={`/images/result/${good}.svg`} $maxWidth="200px" />
-        <StyledImage src={`/images/result/${bad}.svg`} $maxWidth="200px" />
+        <StyledImage
+          src={`/images/result_male/${good}.svg`}
+          $maxWidth="200px"
+        />
+        <StyledImage src={`/images/result_male/${bad}.svg`} $maxWidth="200px" />
       </StyledImageRow>
 
       <StyledButton>저장하기</StyledButton>
