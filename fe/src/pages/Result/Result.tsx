@@ -31,9 +31,13 @@ const Result = () => {
       <StyledText fontFamily="TalkFont" size="lg" weight="bold">
         {RESULT_DESCRIPMATION_MAP[resultKey].talk}
       </StyledText>
-      <StyledText size="sm" align="start">
-        {RESULT_DESCRIPMATION_MAP[resultKey].description}
-      </StyledText>
+
+      {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
+        <StyledText size="sm" align="start" key={idx}>
+          {' '}
+          • {line}
+        </StyledText>
+      ))}
 
       <StyledRowItem>
         <StyledColItem>
