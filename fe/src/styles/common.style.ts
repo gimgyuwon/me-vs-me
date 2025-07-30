@@ -7,6 +7,7 @@ export const StyledCenterTitle = styled.h1`
 `;
 
 interface TextProps {
+  align?: 'start' | 'center' | 'end';
   size?: 'xs' | 'sm' | 'md' | 'lg';
   weight?: 'normal' | 'bold';
   color?: string;
@@ -21,7 +22,7 @@ const sizeMap = {
 };
 
 export const StyledText = styled.p<TextProps>`
-  text-align: center;
+  text-align: ${({ align = 'center' }) => align || 'center'};
   margin: 0;
   font-size: ${({ size = 'md' }) => sizeMap[size]};
   font-weight: ${({ weight = 'normal' }) => weight};
@@ -47,18 +48,18 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const StyledTextRow = styled.div`
+export const StyledColItem = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
-export const StyledImageRow = styled.div`
+export const StyledRowItem = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  gap: 2rem;
-  align-items: center;
+  gap: 1rem;
   margin: 1rem 0;
 `;
 

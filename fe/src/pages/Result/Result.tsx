@@ -3,8 +3,8 @@ import {
   StyledText,
   StyledCenterTitle,
   StyledImage,
-  StyledImageRow,
-  StyledTextRow,
+  StyledColItem,
+  StyledRowItem,
 } from '@styles/common.style';
 import {
   RESULT_COMPATIBILITY_MAP,
@@ -31,21 +31,26 @@ const Result = () => {
       <StyledText fontFamily="TalkFont" size="lg" weight="bold">
         {RESULT_DESCRIPMATION_MAP[resultKey].talk}
       </StyledText>
-      <StyledText size="sm">
+      <StyledText size="sm" align="start">
         {RESULT_DESCRIPMATION_MAP[resultKey].description}
       </StyledText>
 
-      <StyledTextRow>
-        <StyledText>내 친구 사대천왕</StyledText>
-        <StyledText>운명의 앙숙</StyledText>
-      </StyledTextRow>
-      <StyledImageRow>
-        <StyledImage
-          src={`/images/result_male/${good}.svg`}
-          $maxWidth="200px"
-        />
-        <StyledImage src={`/images/result_male/${bad}.svg`} $maxWidth="200px" />
-      </StyledImageRow>
+      <StyledRowItem>
+        <StyledColItem>
+          <StyledText>내 친구 사대천왕</StyledText>
+          <StyledImage
+            src={`/images/result_male/${good}.svg`}
+            $maxWidth="200px"
+          />
+        </StyledColItem>
+        <StyledColItem>
+          <StyledText>운명의 앙숙</StyledText>
+          <StyledImage
+            src={`/images/result_male/${bad}.svg`}
+            $maxWidth="200px"
+          />
+        </StyledColItem>
+      </StyledRowItem>
 
       <StyledButton>저장하기</StyledButton>
     </>
