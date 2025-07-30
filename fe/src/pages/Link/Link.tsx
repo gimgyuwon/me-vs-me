@@ -23,7 +23,7 @@ const Link = () => {
 
   return (
     <>
-      <StyledImage src="/images/notification.gif" maxWidth="70px" />
+      <StyledImage src="/images/notification.gif" $maxWidth="70px" />
       <StyledCenterTitle>링크가 생성되었어요!</StyledCenterTitle>
       <StyledCenterParagraph>
         친구들에게 공유해서 나에 대한 생각을 들어보세요

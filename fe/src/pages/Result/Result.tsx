@@ -19,15 +19,15 @@ const Result = () => {
       <StyledImage
         src={`/images/result/${resultKey}.svg`}
         alt={resultKey}
-        maxWidth="300px"
+        $maxWidth="300px"
       />
       <StyledTextRow>
         <StyledCenterParagraph>나와 잘 맞는 타입</StyledCenterParagraph>
         <StyledCenterParagraph>나와 안 맞는 타입</StyledCenterParagraph>
       </StyledTextRow>
       <StyledImageRow>
-        <StyledImage src={`/images/result/${good}.svg`} maxWidth="200px" />
-        <StyledImage src={`/images/result/${bad}.svg`} maxWidth="200px" />
+        <StyledImage src={`/images/result/${good}.svg`} $maxWidth="200px" />
+        <StyledImage src={`/images/result/${bad}.svg`} $maxWidth="200px" />
       </StyledImageRow>
 
       <StyledButton>저장하기</StyledButton>
