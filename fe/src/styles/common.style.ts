@@ -18,9 +18,13 @@ export const StyledSubText = styled.p`
   margin: 0.75rem 0;
 `;
 
-export const StyledImage = styled.img`
+interface StyledImageProps {
+  maxWidth?: string;
+}
+
+export const StyledImage = styled.img<StyledImageProps>`
   width: 100%;
-  max-width: 300px;
+  max-width: ${({ maxWidth }) => maxWidth || '300px'};
   height: auto;
   display: block;
   margin: 20px auto;
