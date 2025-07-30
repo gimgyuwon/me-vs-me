@@ -18,6 +18,13 @@ export const StyledSubText = styled.p`
   margin: 0.75rem 0;
 `;
 
+export const StyledTalk = styled.p`
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'TalkFont';
+  font-weight: 700;
+`;
+
 export const StyledInput = styled.input`
   display: block;
   font-size: 1rem;

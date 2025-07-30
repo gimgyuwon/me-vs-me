@@ -6,6 +6,7 @@ import {
   StyledImageRow,
   StyledLinkBox,
   StyledTextRow,
+  StyledTalk,
 } from '@styles/common.style';
 import {
   RESULT_COMPATIBILITY_MAP,
@@ -33,9 +34,7 @@ const Result = () => {
       <StyledCenterParagraph>
         {RESULT_DESCRIPMATION_MAP[resultKey].emoji}
       </StyledCenterParagraph>
-      <StyledCenterParagraph>
-        {RESULT_DESCRIPMATION_MAP[resultKey].talk}
-      </StyledCenterParagraph>
+      <StyledTalk>{RESULT_DESCRIPMATION_MAP[resultKey].talk}</StyledTalk>
       <StyledLinkBox>
         {RESULT_DESCRIPMATION_MAP[resultKey].description}
       </StyledLinkBox>
