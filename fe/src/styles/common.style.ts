@@ -91,7 +91,7 @@ export const StyledWobbleButton = styled.button`
   position: relative;
   padding: 0.75rem 1.5rem;
   margin: 1rem auto;
-  width: 300px;
+  width: 350px;
 
   display: flex;
   justify-content: center;
