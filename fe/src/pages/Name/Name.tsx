@@ -6,12 +6,15 @@ import {
 } from '@styles/common.style';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 
 const Name = () => {
-  const [name, setName] = useState('');
+  const id = nanoid();
   const navigate = useNavigate();
+  const [name, setName] = useState('');
+
   const handleClickNext = () => {
-    navigate('/link');
+    if (name.trim()) navigate(`/link/${id}?name=${encodeURIComponent(name)}`);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

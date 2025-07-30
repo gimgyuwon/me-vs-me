@@ -2735,6 +2735,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^5.1.5":
+  version: 5.1.5
+  resolution: "nanoid@npm:5.1.5"
+  bin:
+    nanoid: bin/nanoid.js
+  checksum: 10c0/e6004f1ad6c7123eeb037062c4441d44982037dc043aabb162457ef6986e99964ba98c63c975f96c547403beb0bf95bc537bd7bf9a09baf381656acdc2975c3c
+  languageName: node
+  linkType: hard
+
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
@@ -3780,6 +3789,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.20"
     eslint-plugin-styled-components-a11y: "npm:^2.2.1"
     globals: "npm:^16.3.0"
+    nanoid: "npm:^5.1.5"
     prettier: "npm:^3.1.0"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
