@@ -18,6 +18,24 @@ export const StyledSubText = styled.p`
   margin: 0.75rem 0;
 `;
 
+export const StyledInput = styled.input`
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  width: 350px;
+  height: 50px;
+  padding: 0 3rem;
+  margin: 2rem auto;
+  border-width: 2px;
+  border-style: dashed;
+  border-radius: 99px;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+`;
+
 interface StyledImageProps {
   maxWidth?: string;
 }
@@ -31,7 +49,8 @@ export const StyledImage = styled.img<StyledImageProps>`
 `;
 
 export const StyledButton = styled.button`
-  width: 200px;
+  width: 350px;
+  height: 50px;
   margin: 1rem auto;
   background-color: #000000;
   color: #ffffff;
@@ -41,6 +60,12 @@ export const StyledButton = styled.button`
   align-items: center;
   text-align: center;
   border-radius: 200px;
+  border: none;
+
+  &:disabled {
+    background-color: #ccc;
+    color: #666;
+  }
 `;
 
 const wobble = keyframes`

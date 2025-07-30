@@ -1,14 +1,38 @@
 import {
-  StyledCenterParagraph,
+  StyledButton,
   StyledCenterTitle,
   StyledImage,
+  StyledInput,
 } from '@styles/common.style';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Name = () => {
+  const [name, setName] = useState('');
+  const navigate = useNavigate();
+  const handleClickNext = () => {
+    navigate('/link');
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
   return (
     <>
-      <StyledImage src="/images/name/gingerbread.gif" maxWidth="50px" />
+      <StyledImage src="/images/name/user.gif" maxWidth="70px" />
       <StyledCenterTitle>당신을 뭐라고 부르면 될까요?</StyledCenterTitle>
+      <StyledInput
+        type="text"
+        id="name"
+        value={name}
+        maxLength={10}
+        onChange={handleChange}
+        placeholder="이름을 입력해주세요"
+      />
+      <StyledButton disabled={name.trim() === ''} onClick={handleClickNext}>
+        다음
+      </StyledButton>
     </>
   );
 };
