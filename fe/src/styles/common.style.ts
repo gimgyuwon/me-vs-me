@@ -6,23 +6,27 @@ export const StyledCenterTitle = styled.h1`
   margin-top: 2rem;
 `;
 
-export const StyledCenterParagraph = styled.p`
-  font-size: 1.2rem;
-  text-align: center;
-`;
+interface TextProps {
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  weight?: 'normal' | 'bold';
+  color?: string;
+  fontFamily?: string;
+}
 
-export const StyledSubText = styled.p`
-  font-size: 0.5rem;
-  color: #888;
-  text-align: center;
-  margin: 0.75rem 0;
-`;
+const sizeMap = {
+  xs: '0.5rem',
+  sm: '1rem',
+  md: '1.2rem',
+  lg: '2rem',
+};
 
-export const StyledTalk = styled.p`
-  font-size: 2rem;
+export const StyledText = styled.p<TextProps>`
   text-align: center;
-  font-family: 'TalkFont';
-  font-weight: 700;
+  margin: 0;
+  font-size: ${({ size = 'md' }) => sizeMap[size]};
+  font-weight: ${({ weight = 'normal' }) => weight};
+  color: ${({ color }) => color || 'inherit'};
+  font-family: ${({ fontFamily }) => fontFamily || 'inherit'};
 `;
 
 export const StyledInput = styled.input`

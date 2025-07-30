@@ -1,12 +1,10 @@
 import {
   StyledButton,
-  StyledCenterParagraph,
+  StyledText,
   StyledCenterTitle,
   StyledImage,
   StyledImageRow,
-  StyledLinkBox,
   StyledTextRow,
-  StyledTalk,
 } from '@styles/common.style';
 import {
   RESULT_COMPATIBILITY_MAP,
@@ -19,29 +17,27 @@ const Result = () => {
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
   return (
     <>
-      <StyledCenterParagraph>친구들이 선택한 나의 모습</StyledCenterParagraph>
+      <StyledText>친구들이 선택한 나의 모습</StyledText>
       <StyledCenterTitle>
         {RESULT_DESCRIPMATION_MAP[resultKey].title}
       </StyledCenterTitle>
-      <StyledCenterParagraph>
-        {RESULT_DESCRIPMATION_MAP[resultKey].summary}
-      </StyledCenterParagraph>
+      <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].summary}</StyledText>
       <StyledImage
         src={`/images/result_male/${resultKey}.svg`}
         alt={resultKey}
         $maxWidth="300px"
       />
-      <StyledCenterParagraph>
-        {RESULT_DESCRIPMATION_MAP[resultKey].emoji}
-      </StyledCenterParagraph>
-      <StyledTalk>{RESULT_DESCRIPMATION_MAP[resultKey].talk}</StyledTalk>
-      <StyledLinkBox>
+      <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
+      <StyledText fontFamily="TalkFont" size="lg" weight="bold">
+        {RESULT_DESCRIPMATION_MAP[resultKey].talk}
+      </StyledText>
+      <StyledText size="sm">
         {RESULT_DESCRIPMATION_MAP[resultKey].description}
-      </StyledLinkBox>
+      </StyledText>
 
       <StyledTextRow>
-        <StyledCenterParagraph>내 친구 사대천왕</StyledCenterParagraph>
-        <StyledCenterParagraph>운명의 앙숙</StyledCenterParagraph>
+        <StyledText>내 친구 사대천왕</StyledText>
+        <StyledText>운명의 앙숙</StyledText>
       </StyledTextRow>
       <StyledImageRow>
         <StyledImage

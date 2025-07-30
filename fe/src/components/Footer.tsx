@@ -1,13 +1,13 @@
-import { StyledSubText } from '@styles/common.style';
+import { StyledText } from '@styles/common.style';
 
 const Footer = () => {
   return (
-    <StyledSubText>
+    <StyledText size="xs">
       Icons by{' '}
       <a href="https://lordicon.com/" target="_blank" rel="noopener noreferrer">
         Lordicon
       </a>
-    </StyledSubText>
+    </StyledText>
   );
 };
 
