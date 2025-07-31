@@ -74,7 +74,7 @@ const Result = () => {
         </StyledColItem>
       </StyledRowItem>
       {/* save button */}
-      <StyledButton>저장하기</StyledButton>
+      <StyledButton>친구들한테 공유하기</StyledButton>
     </>
   );
 };
