@@ -30,6 +30,25 @@ export const StyledText = styled.p<TextProps>`
   font-family: ${({ fontFamily }) => fontFamily || 'inherit'};
 `;
 
+interface BoxProps {
+  bgColor?: string;
+  borderWidth?: string;
+  borderColor?: string;
+  borderStyle?: string;
+  paddingTB?: string;
+  paddingRL?: string;
+}
+
+export const StyledBox = styled.div<BoxProps>`
+  background-color: ${({ bgColor }) => bgColor || 'inherit'};
+  border-width: ${({ borderWidth }) => borderWidth || '0'};
+  border-style: ${({ borderStyle }) => borderStyle || 'none'};
+  border-color: ${({ borderColor }) => borderColor || 'transparent'};
+  margin: 1rem 0.5rem;
+  padding: ${({ paddingTB = '0', paddingRL = '0' }) =>
+    `${paddingTB} ${paddingRL}`};
+`;
+
 export const StyledInput = styled.input`
   display: block;
   font-size: 1rem;
@@ -72,7 +91,7 @@ export const StyledImage = styled.img<StyledImageProps>`
   max-width: ${({ $maxWidth }) => $maxWidth || '300px'};
   height: auto;
   display: block;
-  margin: 20px auto;
+  margin: 0px auto;
 `;
 
 export const StyledLinkBox = styled.p`

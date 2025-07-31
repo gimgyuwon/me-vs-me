@@ -5,6 +5,7 @@ import {
   StyledImage,
   StyledColItem,
   StyledRowItem,
+  StyledBox,
 } from '@styles/common.style';
 import {
   RESULT_COMPATIBILITY_MAP,
@@ -27,17 +28,21 @@ const Result = () => {
         alt={resultKey}
         $maxWidth="300px"
       />
-      <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
+      <StyledBox borderWidth="2px" borderColor="#000" borderStyle="solid">
+        <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
+      </StyledBox>
       <StyledText fontFamily="TalkFont" size="lg" weight="bold">
         {RESULT_DESCRIPMATION_MAP[resultKey].talk}
       </StyledText>
 
-      {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
-        <StyledText size="sm" align="start" key={idx}>
-          {' '}
-          • {line}
-        </StyledText>
-      ))}
+      <StyledBox bgColor="#ccc" paddingTB="0.5rem" paddingRL="0.5rem">
+        {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
+          <StyledText size="sm" align="start" key={idx}>
+            {' '}
+            • {line}
+          </StyledText>
+        ))}
+      </StyledBox>
 
       <StyledRowItem>
         <StyledColItem>
