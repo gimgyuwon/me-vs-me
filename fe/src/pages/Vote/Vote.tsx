@@ -6,9 +6,13 @@ import {
   StyledText,
   StyledWobbleButton,
 } from '@styles/common.style';
+import axios from 'axios';
 import { useState } from 'react';
+import { voteOption } from '@constant/voteOption';
+import { useNavigate } from 'react-router-dom';
 
 const Vote = () => {
+  const navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState<(string | null)[]>([
     null,
     null,
@@ -20,14 +24,25 @@ const Vote = () => {
     updated[groupIdx] = value;
     setSelectedOptions(updated);
   };
-  const voteOption = [
-    ['재벌 3세', '소시민'],
-    ['모범생', '일진짱'],
-    ['속이 여린', '속이 단단한'],
-    ['날카로운 인상', '부드러운 인상'],
-  ];
-  const handleSubmit = () => {
-    if (selectedOptions.includes(null)) alert('모든 질문에 응답해주세요');
+
+  const handleSubmit = async () => {
+    if (selectedOptions.includes(null)) {
+      alert('모든 질문에 응답해주세요');
+      return;
+    }
+
+    try {
+      await axios.post('/api/vote', {
+        answers: selectedOptions,
+      });
+      alert('투표가 성공적으로 제출되었습니다!');
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+      alert('투표 제출 중 오류가 발생했습니다.');
+    }
   };
 
   return (
