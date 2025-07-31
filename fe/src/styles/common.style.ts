@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const StyledCenterTitle = styled.h1`
   font-size: 1.5rem;
@@ -138,32 +138,41 @@ export const StyledLinkBox = styled.p`
 interface buttonProps {
   $bgColor?: string;
   $textColor?: string;
+  selected?: boolean;
 }
+const wobble = keyframes`
+  0% { transform: rotate(-1deg) scale(1); }
+  50% { transform: rotate(1deg) scale(1); }
+  100% { transform: rotate(-1deg) scale(1); }
+`;
 
 export const StyledButton = styled.button<buttonProps>`
-  width: 350px;
+  max-width: 350px;
+  width: 150px;
   height: 50px;
   margin: 1rem auto;
-  background-color: ${({ $bgColor }) => $bgColor || '#fff'};
+  background-color: ${({ $bgColor, selected }) =>
+    selected ? '#ccc' : $bgColor || '#fff'};
   color: ${({ $textColor }) => $textColor || '#000'};
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 200px;
-  border: none;
+  border-radius: 19px;
+  border: 2px dashed ${({ $textColor }) => $textColor || 'none'};
+
+  animation: ${({ selected }) =>
+    selected &&
+    css`
+      ${wobble} 1s infinite
+    `};
+  transition: background-color 0.3s ease;
 
   &:disabled {
     background-color: #ccc;
     color: #666;
   }
-`;
-
-const wobble = keyframes`
-  0% { transform: rotate(-1deg) scale(1); }
-  50% { transform: rotate(1deg) scale(1); }
-  100% { transform: rotate(-1deg) scale(1); }
 `;
 
 export const StyledWobbleButton = styled.button<buttonProps>`
