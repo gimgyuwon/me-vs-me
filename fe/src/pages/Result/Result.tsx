@@ -12,12 +12,15 @@ import {
   RESULT_COMPATIBILITY_MAP,
   RESULT_DESCRIPMATION_MAP,
 } from '@constant/resultMap';
+import { useNavigate } from 'react-router-dom';
 
 const Result = () => {
   const resultKey = 'bbab';
   const good = RESULT_COMPATIBILITY_MAP[resultKey].good;
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
   const vote_num = 3;
+  const navigator = useNavigate();
+
   return (
     <>
       {/* title */}
@@ -78,8 +81,12 @@ const Result = () => {
         </StyledColItem>
       </StyledRowItem>
       {/* save button */}
-      <StyledButton $bgColor="#000" $textColor="#fff">
-        내 캐릭터 캡쳐하기
+      <StyledButton
+        $bgColor="#000"
+        $textColor="#fff"
+        onClick={() => navigator('/')}
+      >
+        처음으로
       </StyledButton>
     </>
   );
