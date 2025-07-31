@@ -10,7 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleClickStart = () => {
-    navigate('/name');
+    navigate('/gender');
   };
 
   return (

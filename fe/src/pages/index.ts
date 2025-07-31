@@ -1,3 +1,3 @@
 export * from './Home';
-export * from './Name';
+export * from './Gender';
 export * from './Link';

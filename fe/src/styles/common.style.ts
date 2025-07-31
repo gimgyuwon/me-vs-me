@@ -54,24 +54,6 @@ export const StyledBox = styled.div<BoxProps>`
     `${paddingTB} ${paddingRL}`};
 `;
 
-export const StyledInput = styled.input`
-  display: block;
-  font-size: 1rem;
-  text-align: center;
-  width: 350px;
-  height: 50px;
-  padding: 0 3rem;
-  margin: 2rem auto;
-  border-width: 2px;
-  border-style: dashed;
-  border-radius: 99px;
-
-  &:focus {
-    outline: none;
-    box-shadow: none;
-  }
-`;
-
 export const StyledColItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -144,20 +126,26 @@ export const StyledLinkBox = styled.p`
   width: 350px;
   height: 50px;
   text-align: center;
+  align-content: center;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 0rem;
   overflow-x: auto;
   overflow-y: hidden;
   color: #333;
   background-color: #f0f0f0;
 `;
 
-export const StyledButton = styled.button`
+interface buttonProps {
+  bgColor?: string;
+  textColor?: string;
+}
+
+export const StyledButton = styled.button<buttonProps>`
   width: 350px;
   height: 50px;
   margin: 1rem auto;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: ${({ bgColor }) => bgColor || '#fff'};
+  color: ${({ textColor }) => textColor || '#000'};
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
@@ -178,11 +166,14 @@ const wobble = keyframes`
   100% { transform: rotate(-1deg) scale(1); }
 `;
 
-export const StyledWobbleButton = styled.button`
+export const StyledWobbleButton = styled.button<buttonProps>`
   position: relative;
   padding: 0.75rem 1.5rem;
   margin: 1rem auto;
   width: 350px;
+
+  background-color: ${({ bgColor }) => bgColor || '#fff'};
+  color: ${({ textColor }) => textColor || '#000'};
 
   display: flex;
   justify-content: center;
@@ -190,9 +181,6 @@ export const StyledWobbleButton = styled.button`
 
   font-size: 1.2rem;
   font-weight: bold;
-
-  background-color: #fff;
-  color: #000;
 
   border: 2px solid #000;
   border-radius: 999px;
