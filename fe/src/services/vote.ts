@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 interface SubmitVoteProps {
   id?: string;
   gender?: string;

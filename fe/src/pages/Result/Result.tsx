@@ -15,8 +15,7 @@ import {
 } from '@constant/resultMap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-
+import { getResult } from '@services/result';
 interface ResultProps {
   resultKey: string;
   voteNum: number;
@@ -34,10 +33,8 @@ const Result = () => {
   useEffect(() => {
     const fetchResult = async () => {
       try {
-        const response = await axios.get<ResultProps>(
-          `/api/result/${id}/${gender}`,
-        );
-        setResultData(response.data);
+        const response = await getResult({ id: id, gender: gender });
+        setResultData(response);
       } catch (err: any) {
         setError(err.message || '결과 데이터를 불러오는데 실패했습니다.');
       } finally {
@@ -46,9 +43,9 @@ const Result = () => {
     };
 
     fetchResult();
-  }, []);
+  }, [id, gender]);
 
-  if (isLoading) return <StyledText>로딩 중....</StyledText>;
+  if (isLoading) return <StyledText>결과를 불러오는 중이에요...</StyledText>;
   if (error) return <StyledText>{error}</StyledText>;
   if (!resultData) return null;
 
@@ -56,8 +53,13 @@ const Result = () => {
   const good = RESULT_COMPATIBILITY_MAP[resultKey].good || '';
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad || '';
 
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText(currUrl);
+  const handleCopyClick = async () => {
+    try {
+      await navigator.clipboard.writeText(currUrl);
+      alert('결과 링크가 복사되었어요');
+    } catch {
+      alert('복사에 실패했어요. 다시 시도해주세요.');
+    }
   };
 
   return (
