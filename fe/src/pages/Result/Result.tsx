@@ -92,7 +92,7 @@ const Result = () => {
         <StyledText fontFamily="TalkFont" size="md" weight="bold">
           {RESULT_DESCRIPMATION_MAP[resultKey].talk}
         </StyledText>
-        {/* <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText> */}
+        <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
       </StyledSpeechBubble>
       {/* image */}
       <StyledImage
