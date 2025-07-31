@@ -27,8 +27,8 @@ const Gender = () => {
         남성
       </StyledWobbleButton>
       <StyledWobbleButton
-        bgColor="#000"
-        textColor="#fff"
+        $bgColor="#000"
+        $textColor="#fff"
         onClick={() => handleClick('female')}
       >
         여성

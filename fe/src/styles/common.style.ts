@@ -172,8 +172,8 @@ export const StyledWobbleButton = styled.button<buttonProps>`
   margin: 1rem auto;
   width: 350px;
 
-  background-color: ${({ bgColor }) => bgColor || '#fff'};
-  color: ${({ textColor }) => textColor || '#000'};
+  background-color: ${({ $bgColor }) => $bgColor || '#fff'};
+  color: ${({ $textColor }) => $textColor || '#000'};
 
   display: flex;
   justify-content: center;
