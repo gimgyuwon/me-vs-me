@@ -39,9 +39,6 @@ const Vote = () => {
         answers: selectedOptions,
       });
       alert('투표가 성공적으로 제출되었습니다!');
-      setTimeout(() => {
-        navigate('/');
-      }, 3000);
     } catch (error) {
       console.error(error);
       alert('투표 제출 중 오류가 발생했습니다.');
@@ -58,8 +55,8 @@ const Vote = () => {
             <StyledButton
               $bgColor="#fff"
               $textColor="#000"
-              onClick={() => handleOptionClick(idx, optionPair[0])}
-              selected={selectedOptions[idx] === optionPair[0]}
+              onClick={() => handleOptionClick(idx, 'a')}
+              selected={selectedOptions[idx] === 'a'}
             >
               <StyledText weight="bold">{optionPair[0]}</StyledText>
             </StyledButton>
@@ -67,8 +64,8 @@ const Vote = () => {
             <StyledButton
               $bgColor="#fff"
               $textColor="#000"
-              onClick={() => handleOptionClick(idx, optionPair[1])}
-              selected={selectedOptions[idx] === optionPair[1]}
+              onClick={() => handleOptionClick(idx, 'b')}
+              selected={selectedOptions[idx] === 'b'}
             >
               <StyledText weight="bold">{optionPair[1]}</StyledText>
             </StyledButton>
