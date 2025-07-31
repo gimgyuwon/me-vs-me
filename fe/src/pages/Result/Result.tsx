@@ -16,18 +16,25 @@ import {
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getResult } from '@services/result';
-import { ResultProps } from '@interfaces/result';
+import { GetResultProps, ResultProps } from '@interfaces/result';
 
 const Result = () => {
   const navigate = useNavigate();
   const currUrl = window.location.href;
-  const { id, gender } = useParams();
 
+  const { id, gender } = useParams<GetResultProps>();
   const [resultData, setResultData] = useState<ResultProps | null>(null);
+
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!id || !gender) {
+      setError('유효하지 않은 요청입니다.');
+      setLoading(false);
+      return;
+    }
+
     const fetchResult = async () => {
       try {
         const response = await getResult({ id: id, gender: gender });
@@ -46,9 +53,9 @@ const Result = () => {
   if (error) return <StyledText>{error}</StyledText>;
   if (!resultData) return null;
 
-  const { resultKey, voteNum } = resultData;
-  const good = RESULT_COMPATIBILITY_MAP[resultKey].good || '';
-  const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad || '';
+  const { resultKey, voteNum }: ResultProps = resultData;
+  const good = RESULT_COMPATIBILITY_MAP[resultKey].good ?? '';
+  const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad ?? '';
 
   const handleCopyClick = async () => {
     try {
