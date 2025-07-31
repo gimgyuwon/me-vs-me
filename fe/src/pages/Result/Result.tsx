@@ -16,10 +16,7 @@ import {
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getResult } from '@services/result';
-interface ResultProps {
-  resultKey: string;
-  voteNum: number;
-}
+import { ResultProps } from '@interfaces/result';
 
 const Result = () => {
   const navigate = useNavigate();
