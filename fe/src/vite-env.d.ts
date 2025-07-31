@@ -3,3 +3,5 @@ declare module '@pages/*';
 declare module '@components/*';
 declare module '@styles/*';
 declare module '@constant/*';
+declare module '@interfaces/*';
+declare module '@services/*';

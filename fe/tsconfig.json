@@ -19,6 +19,8 @@
       "@constant/*": ["src/constant/*"],
       "@components": ["src/components"],
       "@components/*": ["src/components/*"],
+      "@interfaces": ["src/interfaces"],
+      "@interfaces/*": ["src/interfaces/*"],
       "@services": ["src/services"],
       "@services/*": ["src/services/*"],
       "@styles": ["src/styles"],
