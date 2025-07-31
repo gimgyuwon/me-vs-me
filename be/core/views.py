@@ -3,33 +3,54 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Participant
+from .models import Participant, Vote
 import json
 from django.http import JsonResponse
+from django.db import transaction
+
+@api_view(['POST'])
+@csrf_exempt
+def create_participant(request):
+    data = request.data
+    id = data.get('id')
+    gender = data.get('gender')
+    if not id or not gender:
+        return JsonResponse({'error': 'Invalid data'}, status=400)
+    
+    participant, created = Participant.objects.get_or_create(id=id)
+
+    if not created:
+        participant.gender = gender
+        participant.save()
+
+    return JsonResponse({'message': 'Participant created'})
+
 
 # Post /api/vote
 @api_view(['POST'])
-@csrf_exempt
 def post_vote(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        id = data.get('id')
-        gender = data.get('gender')
-        answers = data.get('answers')
-        
-        if not id or not answers or len(answers) != 4:
-            return JsonResponse({'error': 'Invalid input'}, status=400)
-    
-        participant, created = Participant.objects.get_or_create(id = id)
-        participant.gender = gender
-        participant.choice1 = answers[0]
-        participant.choice2 = answers[1]
-        participant.choice3 = answers[2]
-        participant.choice4 = answers[3]
-        participant.save()
+    data = request.data
+    id = data.get('id')
+    gender = data.get('gender')
+    answers = data.get('answers')
 
-        return JsonResponse({'message': 'Vote saved'})
-    return JsonResponse({'error': 'Invalid method'}, status=405)
+    if not id or not gender or not answers or len(answers) != 4:
+        return JsonResponse({'error': 'Invalid input'}, status=400)
+
+    participant = Participant.objects.filter(id=id, gender=gender).first()
+
+    if not participant:
+        return JsonResponse({'error': 'Participant not found'}, status=404)
+
+    with transaction.atomic():
+        for i, answer in enumerate(answers, start=1):
+            Vote.objects.create(
+                participant=participant,
+                question_num=i,
+                choice=answer
+            )
+
+    return JsonResponse({'message': 'Vote saved'})
 
 # Get /api/result
 @api_view(['GET'])
@@ -39,28 +60,30 @@ def get_result(request, id, gender):
     except Participant.DoesNotExist:
         return JsonResponse({'error': 'User not found'}, status=404)
     
-    all_votes = Participant.objects.all()
-    vote_num = all_votes.count()
-
-    if vote_num == 0:
-        return JsonResponse({'error': 'No votes yet'}, status=404)
-
+    votes = Vote.objects.filter(participant=participant)
     counts = [{'a': 0, 'b': 0} for _ in range(4)]
-
-    for p in all_votes:
-        for i, choice in enumerate([p.choice1, p.choice2, p.choice3, p.choice4]):
-            if choice == 'a':
-                counts[i]['a'] += 1
-            elif choice == 'b':
-                counts[i]['b'] += 1
+    vote_num = votes.count() / 4
     result_key = ''
-    for c in counts:
-        if c['a'] >= c['b']:
+    
+    if not votes.exists():
+        return JsonResponse({'error': 'No votes yet'}, status=404)
+       
+
+    for vote in votes:
+        idx = vote.question_num - 1
+        if vote.choice == 'a':
+            counts[idx]['a'] += 1
+        elif vote.choice == 'b':
+            counts[idx]['b'] += 1
+        
+    for q in range(4):
+        if counts[q]['a'] >= counts[q]['b']:
             result_key += 'a'
         else:
             result_key += 'b'
-    
+        
     return JsonResponse({
         'resultKey': result_key,
         'voteNum': vote_num,
+        'counts': counts,
     })
