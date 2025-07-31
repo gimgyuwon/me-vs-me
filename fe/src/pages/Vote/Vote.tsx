@@ -7,12 +7,13 @@ import {
   StyledWobbleButton,
   StyledImage,
 } from '@styles/common.style';
-import axios from 'axios';
 import { useState } from 'react';
 import { voteList } from '@constant/voteOption';
 import { useNavigate, useParams } from 'react-router-dom';
+import { submitVote } from '@services/vote';
 
 const Vote = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id, gender } = useParams();
   const [selectedOptions, setSelectedOptions] = useState<(string | null)[]>([
@@ -21,6 +22,7 @@ const Vote = () => {
     null,
     null,
   ]);
+
   const handleOptionClick = (groupIdx: number, value: string) => {
     const updated = [...selectedOptions];
     updated[groupIdx] = value;
@@ -32,17 +34,16 @@ const Vote = () => {
       alert('모든 질문에 응답해주세요');
       return;
     }
+    setLoading(true);
 
     try {
-      await axios.post('/api/vote/', {
-        id,
-        gender,
-        answers: selectedOptions,
-      });
-      alert('투표가 성공적으로 제출되었습니다!');
+      await submitVote({ id: id, gender: gender, answers: selectedOptions });
+      navigate(`/result/${id}/${gender}`);
     } catch (error) {
       console.error(error);
       alert('투표 제출 중 오류가 발생했습니다.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,8 +85,9 @@ const Vote = () => {
         $bgColor="#000"
         $textColor="#fff"
         onClick={handleSubmit}
+        disabled={loading}
       >
-        결과 제출하기
+        {loading ? '제출 중....' : '제출하고 결과 확인하기'}
       </StyledWobbleButton>
     </>
   );
