@@ -13,7 +13,7 @@ import {
   RESULT_COMPATIBILITY_MAP,
   RESULT_DESCRIPMATION_MAP,
 } from '@constant/resultMap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -25,6 +25,7 @@ interface ResultProps {
 const Result = () => {
   const navigate = useNavigate();
   const currUrl = window.location.href;
+  const { id, gender } = useParams();
 
   const [resultData, setResultData] = useState<ResultProps | null>(null);
   const [isLoading, setLoading] = useState(true);
@@ -33,7 +34,9 @@ const Result = () => {
   useEffect(() => {
     const fetchResult = async () => {
       try {
-        const response = await axios.get<ResultProps>('/api/result/');
+        const response = await axios.get<ResultProps>(
+          `/api/result/${id}/${gender}`,
+        );
         setResultData(response.data);
       } catch (err: any) {
         setError(err.message || '결과 데이터를 불러오는데 실패했습니다.');

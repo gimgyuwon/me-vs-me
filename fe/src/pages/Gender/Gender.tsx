@@ -16,7 +16,7 @@ const Gender = () => {
 
   const handleClick = (gender: 'male' | 'female') => {
     setSelectGender(gender);
-    navigate(`/link/${id}?gender=${gender}`);
+    navigate(`/link/${id}/${gender}`);
   };
 
   return (

@@ -9,10 +9,11 @@ import {
 import axios from 'axios';
 import { useState } from 'react';
 import { voteOption } from '@constant/voteOption';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Vote = () => {
   const navigate = useNavigate();
+  const { id, gender } = useParams();
   const [selectedOptions, setSelectedOptions] = useState<(string | null)[]>([
     null,
     null,
@@ -32,7 +33,9 @@ const Vote = () => {
     }
 
     try {
-      await axios.post('/api/vote', {
+      await axios.post('/api/vote/', {
+        id,
+        gender,
         answers: selectedOptions,
       });
       alert('투표가 성공적으로 제출되었습니다!');

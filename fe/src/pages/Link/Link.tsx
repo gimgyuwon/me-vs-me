@@ -6,19 +6,19 @@ import {
   StyledLinkBox,
   StyledWobbleButton,
 } from '@styles/common.style';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const Link = () => {
-  const { id } = useParams();
+  const { id, gender } = useParams();
   const navigate = useNavigate();
-  const voteUrl = `${window.location.origin}/vote/${id}`;
+  const voteUrl = `${window.location.origin}/vote/${id}/${gender}`;
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(voteUrl);
   };
 
   const handleResultCheckClick = () => {
-    navigate(`/result/${id}`);
+    navigate(`/result/${id}/${gender}`);
   };
 
   return (
