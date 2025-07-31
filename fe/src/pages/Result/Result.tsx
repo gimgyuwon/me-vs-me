@@ -14,14 +14,44 @@ import {
   RESULT_DESCRIPMATION_MAP,
 } from '@constant/resultMap';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+interface ResultProps {
+  resultKey: string;
+  voteNum: number;
+}
 
 const Result = () => {
-  const resultKey = 'bbab';
-  const good = RESULT_COMPATIBILITY_MAP[resultKey].good;
-  const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
-  const vote_num = 3;
-  const currUrl = window.location.href;
   const navigate = useNavigate();
+  const currUrl = window.location.href;
+
+  const [resultData, setResultData] = useState<ResultProps | null>(null);
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchResult = async () => {
+      try {
+        const response = await axios.get<ResultProps>('/api/result');
+        setResultData(response.data);
+      } catch (err: any) {
+        setError(err.message || '결과 데이터를 불러오는데 실패했습니다.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchResult();
+  }, []);
+
+  if (isLoading) return <StyledText>로딩 중....</StyledText>;
+  if (error) return <StyledText>{error}</StyledText>;
+  if (!resultData) return null;
+
+  const { resultKey, voteNum } = resultData;
+  const good = RESULT_COMPATIBILITY_MAP[resultKey].good || '';
+  const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad || '';
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(currUrl);
@@ -31,7 +61,7 @@ const Result = () => {
     <>
       {/* title */}
       <StyledText size="lg" weight="bold">
-        친구 {vote_num}명이 <br />
+        친구 {voteNum}명이 <br />
         선택한 내 캐릭터는?
       </StyledText>
       <StyledCenterTitle>
