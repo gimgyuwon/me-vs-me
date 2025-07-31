@@ -50,19 +50,27 @@ const Result = () => {
       </StyledBox>
       {/* good and bad */}
       <StyledRowItem>
+        {/* good */}
         <StyledColItem>
           <StyledText>내 친구 사대천왕</StyledText>
           <StyledImage
             src={`/images/result_male/${good}.svg`}
             $maxWidth="200px"
           />
+          <StyledText size="sm">
+            {RESULT_DESCRIPMATION_MAP[good].title}
+          </StyledText>
         </StyledColItem>
+        {/* bad */}
         <StyledColItem>
           <StyledText>운명의 앙숙</StyledText>
           <StyledImage
             src={`/images/result_male/${bad}.svg`}
             $maxWidth="200px"
           />
+          <StyledText size="sm">
+            {RESULT_DESCRIPMATION_MAP[bad].title}
+          </StyledText>
         </StyledColItem>
       </StyledRowItem>
       {/* save button */}

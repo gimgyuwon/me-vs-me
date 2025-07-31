@@ -9,7 +9,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
   }
 > = {
   aaaa: {
-    title: '겉바 속촉 재계 서열 1위 모범생',
+    title: '겉바속촉 재벌가 모범생',
     summary: '차가워 보여도 마음은 누구보다 따뜻해요.',
     description: [
       '말투는 완벽, 리더십은 냉철. 모두가 믿는 완전체.',
@@ -18,10 +18,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '“나 괜찮아” 말해도, 너 괜찮은지가 더 중요함.',
     ],
     emoji: '(-_^)',
-    talk: '겉으론 무심하지만, 속으론 네가 걱정돼.',
+    talk: '난 참견 안 해. 단지, 네가 또 울면 귀찮잖아. 그만 좀 울어.',
   },
   aaab: {
-    title: '겉바 속촉 재계 서열 1위 불량아',
+    title: '겉바속촉 재벌가 불량아',
     summary: '차가운 겉모습 속에 숨겨진 따뜻한 눈빛.',
     description: [
       '반항기 풀장착, 말수 적은 불량아.',
@@ -30,10 +30,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '철벽 쳐도, 티 나는 다정함 숨기기 실패.',
     ],
     emoji: '(￢‿￢ )',
-    talk: '말 안 해도, 다 보고 있으니까.',
+    talk: '누가 챙겨달랬냐? 그냥… 그딴 표정 짓지 마, 보기 싫으니까.',
   },
   aaba: {
-    title: '겉바 속촉 소시민 모범생',
+    title: '겉바속촉 소시민 모범생',
     summary: '평범함 속에서 피어나는 다정함.',
     description: [
       '조용히 자기 할 일, 그런데 은근히 다 챙김.',
@@ -42,10 +42,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '혼자 있을 땐 “오늘도 잘했어!” 셀프 토닥이 필수.',
     ],
     emoji: '(*´︶`*)',
-    talk: '오늘도 잘했어, 내일은 더 괜찮을 거야.',
+    talk: '똑바로 안 살 거면 내 눈앞에 나타나지도 마. 귀찮게 하지 말고.',
   },
   aabb: {
-    title: '겉바 속촉 소시민 불량아',
+    title: '겉바속촉 소시민 불량아',
     summary: '툴툴대지만 결국 챙겨주는 사람.',
     description: [
       '말은 툭툭, 손은 바쁘게 챙기는 스타일.',
@@ -54,10 +54,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '남 걱정 안 하는 척, 혼자 고민 3일째.',
     ],
     emoji: '(｀_´)ゞ',
-    talk: '나 말고 아무도 울리지 마.',
+    talk: '야, 감기 걸리면 나 귀찮아져. 우산 써, 얼른.',
   },
   abaa: {
-    title: '겉촉 속촉 재계 서열 1위 모범생',
+    title: '겉촉속촉 재벌가 모범생',
     summary: '완벽해 보이지만, 마음은 늘 사람에게 있어요.',
     description: [
       '늘 웃고 다정, 근데 리더십은 강철급.',
@@ -66,10 +66,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '결정은 빠르지만, 마음은 늘 상대방 먼저.',
     ],
     emoji: '(◕‿◕✿)',
-    talk: '너를 위한 선택이길 바라.',
+    talk: '조용히 일 처리하는 거, 나 특기야. 넌 그냥 믿고 따라와.',
   },
   abab: {
-    title: '겉촉 속촉 재계 서열 1위 불량아',
+    title: '겉촉속촉 재벌가 불량아',
     summary: '장난스러움 뒤에 숨겨진 외로움.',
     description: [
       '웃고 떠들지만, 속마음은 미궁 속.',
@@ -78,10 +78,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '진심 알아봐주면 갑자기 핵진지해짐.',
     ],
     emoji: '(¬‿¬ )',
-    talk: '다 보여주지 않는 게, 내가 살아남는 법.',
+    talk: '야, 내가 쓴 거 티나? 아 몰라 몰라. 결과만 좋으면 됐지.',
   },
   abba: {
-    title: '겉촉 속촉 소시민 모범생',
+    title: '겉촉속촉 소시민 모범생',
     summary: '밝고 따뜻한 모두의 친구.',
     description: [
       '어디서든 먼저 인사, 먼저 웃는 다정왕.',
@@ -93,7 +93,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
     talk: '나 먼저 웃어줄게, 너도 안심할 수 있게.',
   },
   abbb: {
-    title: '겉촉 속촉 소시민 불량아',
+    title: '겉촉속촉 소시민 불량아',
     summary: '무심한 듯 다정한, 츤데레의 정석.',
     description: [
       '툭 내뱉는 말투에 다들 깜짝!',
@@ -102,10 +102,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '마음은 앞서는데, 입은 자꾸 반대 방향.',
     ],
     emoji: '(￣ヘ￣)',
-    talk: '...됐고, 밥은 먹었냐.',
+    talk: '와~ 나 또 이거 정리 다 해놨다고~ 진짜 나 없었으면 어쩔 뻔~',
   },
   baaa: {
-    title: '겉바 속바 재계 서열 1위 모범생',
+    title: '겉바속바 재벌가 모범생',
     summary: '이성과 원칙으로 무장한 리더.',
     description: [
       '원칙 없으면 못 사는 인생 매뉴얼 인간.',
@@ -114,10 +114,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '단단한 이유? 무너지기 싫어서.',
     ],
     emoji: '(-‿- )',
-    talk: '감정은 후순위. 결과가 전부야.',
+    talk: '나 정도 되면 뭐든 해결하지. 네 일도, 네 미래도.',
   },
   baab: {
-    title: '겉바 속바 재계 서열 1위 불량아',
+    title: '겉바속바 재벌가 불량아',
     summary: '냉소 속에 감춰진 고독.',
     description: [
       '말 적고 표정 굳음, 세상과 거리 두기 중.',
@@ -126,10 +126,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '외로운데 외롭다 말 못 함… 그게 나.',
     ],
     emoji: '(╬ ಠ益ಠ)',
-    talk: '내가 아니라, 세상이 먼저 그랬어.',
+    talk: '돈? 시간? 나 그런 거 많거든. 그러니까 그냥 붙어있어.',
   },
   baba: {
-    title: '겉바 속바 소시민 모범생',
+    title: '겉바속바 소시민 모범생',
     summary: '조용한 성실함, 묵직한 신뢰감.',
     description: [
       '말보다 행동파. 꾸준함이 곧 아이덴티티.',
@@ -138,10 +138,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '사실 고민 많음. 그냥 말 안 할 뿐.',
     ],
     emoji: '( •̀ ω •́ )',
-    talk: '한 걸음씩, 제대로 가는 중이야.',
+    talk: '무례한 말은 지양해주세요. 아무리 친해도 예의는 지켜야죠?',
   },
   babb: {
-    title: '겉바 속바 소시민 불량아',
+    title: '겉바속바 소시민 불량아',
     summary: '세상과 비껴 선 듯한 무심함 속 따뜻함.',
     description: [
       '자기만의 템포, 사회 시계랑 다름.',
@@ -150,10 +150,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '다정하단 말 싫어하지만… 사실 제일 다정.',
     ],
     emoji: '(╯︵╰,)',
-    talk: '말보다 행동. 내 방식대로.',
+    talk: '아이 몰라~ 대충 살자고, 인생 뭐 있냐. 어차피 다 거기서 거기야.',
   },
   bbaa: {
-    title: '겉촉 속바 재계 서열 1위 모범생',
+    title: '겉촉속바 재벌가 모범생',
     summary: '다정한 미소, 단단한 신념.',
     description: [
       '겉은 웃고 있어도 속은 체계+효율로 가득.',
@@ -162,10 +162,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '따뜻함과 냉철함의 밸런스 마스터.',
     ],
     emoji: '(•‿•)',
-    talk: '웃는 건 습관, 흔들리지 않는 건 선택.',
+    talk: '눈치 보지 마. 당신이 하고 싶은 거면, 내가 뒤에 있어줄게.',
   },
   bbab: {
-    title: '겉촉 속바 재계 서열 1위 불량아',
+    title: '겉촉속바 재벌가 불량아',
     summary: '유쾌함을 무기로 감정을 숨긴다.',
     description: [
       '늘 장난, 늘 웃음. 근데 뭔가 숨기는 느낌?',
@@ -174,10 +174,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '“나 괜찮아”에 진심 10% 섞여 있음.',
     ],
     emoji: '(¬_¬ )',
-    talk: '너, 진짜 날 알고 싶어?',
+    talk: '헐~ 진짜 울어? 야야 울지 마, 나 진짜 그런 거 못 봐...',
   },
   bbba: {
-    title: '겉촉 속바 소시민 모범생',
+    title: '겉촉속바 소시민 모범생',
     summary: '작은 배려들이 쌓여 만든 신뢰.',
     description: [
       '조용하지만 다정. 항상 자기 일은 똑부러지게.',
@@ -186,10 +186,10 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '한결같은 성실함에 믿음이 생김.',
     ],
     emoji: '(｡•ᴗ•｡)',
-    talk: '같이 천천히 걸어보자, 그게 더 좋을지도 몰라.',
+    talk: '괜찮아요. 실수해도, 넘어져도... 제가 다 갚아줄거니까',
   },
   bbbb: {
-    title: '겉촉 속바 소시민 불량아',
+    title: '겉촉속바 소시민 불량아',
     summary: '무심한 듯, 따뜻한 한마디.',
     description: [
       '겉으론 무심, 속은 다정. 츤데레 종결자.',
@@ -198,7 +198,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '티는 안 내지만, 마음은 그쪽 향해 있음.',
     ],
     emoji: '(￣︿￣;)',
-    talk: '다 귀찮은데, 너는 예외.',
+    talk: '뭐어~ 너 힘들면 걍 말하지, 왜 맨날 웃고 그래. 짜증나게…',
   },
 };
 
