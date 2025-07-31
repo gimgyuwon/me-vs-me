@@ -19,33 +19,27 @@ const Result = () => {
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
   return (
     <>
+      {/* title */}
       <StyledText>친구들이 선택한 나의 모습</StyledText>
       <StyledCenterTitle>
         {RESULT_DESCRIPMATION_MAP[resultKey].title}
       </StyledCenterTitle>
+      {/* summary */}
       <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].summary}</StyledText>
+      {/* speech bubble */}
       <StyledSpeechBubble>
         <StyledText fontFamily="TalkFont" size="lg" weight="bold">
           {RESULT_DESCRIPMATION_MAP[resultKey].talk}
         </StyledText>
+        <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
       </StyledSpeechBubble>
-
+      {/* image */}
       <StyledImage
         src={`/images/result_male/${resultKey}.svg`}
         alt={resultKey}
         $maxWidth="300px"
       />
-      <StyledBox
-        maxWidth="100px"
-        borderWidth="2px"
-        borderColor="#000"
-        borderStyle="solid"
-        borderRadius="999px"
-        paddingRL=""
-      >
-        <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
-      </StyledBox>
-
+      {/* description */}
       <StyledBox bgColor="#ccc" paddingTB="0.5rem" paddingRL="0.5rem">
         {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
           <StyledText size="sm" align="start" key={idx}>
@@ -54,7 +48,7 @@ const Result = () => {
           </StyledText>
         ))}
       </StyledBox>
-
+      {/* good and bad */}
       <StyledRowItem>
         <StyledColItem>
           <StyledText>내 친구 사대천왕</StyledText>
@@ -71,7 +65,7 @@ const Result = () => {
           />
         </StyledColItem>
       </StyledRowItem>
-
+      {/* save button */}
       <StyledButton>저장하기</StyledButton>
     </>
   );

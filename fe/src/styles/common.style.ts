@@ -92,7 +92,12 @@ export const StyledSpeechBubble = styled.div`
   border-radius: 1rem;
   padding: 0;
   margin: 1rem auto;
-  max-width: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
   &::after {
     content: '';
