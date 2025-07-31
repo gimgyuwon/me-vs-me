@@ -3,7 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 export const StyledCenterTitle = styled.h1`
   font-size: 1.5rem;
   text-align: center;
-  margin-top: 2rem;
+  margin: 2rem 0;
 `;
 
 interface TextProps {
@@ -66,7 +66,6 @@ export const StyledRowItem = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
-  margin: 1rem 0;
 `;
 
 export const StyledSpeechBubble = styled.div`
@@ -138,6 +137,7 @@ export const StyledLinkBox = styled.p`
 interface buttonProps {
   $bgColor?: string;
   $textColor?: string;
+  $maxWidth?: string;
   selected?: boolean;
 }
 const wobble = keyframes`
@@ -147,21 +147,24 @@ const wobble = keyframes`
 `;
 
 export const StyledButton = styled.button<buttonProps>`
-  max-width: 350px;
+  width: 100%;
+  max-width: ${({ $maxWidth }) => $maxWidth || '100%'};
   width: 150px;
-  height: 50px;
+  height: auto;
   margin: 1rem auto;
-  background-color: ${({ $bgColor, selected }) =>
-    selected ? '#ccc' : $bgColor || '#fff'};
+  background-color: ${({ $bgColor }) => $bgColor || '#fff'};
   color: ${({ $textColor }) => $textColor || '#000'};
   font-size: 1.2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   border-radius: 19px;
-  border: 2px dashed ${({ $textColor }) => $textColor || 'none'};
-
+  border: ${({ $textColor, selected }) =>
+    selected
+      ? `3px solid ${$textColor || '#000'}`
+      : `2px dashed ${$textColor}` || 'none'};
   animation: ${({ selected }) =>
     selected &&
     css`

@@ -5,10 +5,11 @@ import {
   StyledButton,
   StyledText,
   StyledWobbleButton,
+  StyledImage,
 } from '@styles/common.style';
 import axios from 'axios';
 import { useState } from 'react';
-import { voteOption } from '@constant/voteOption';
+import { voteList } from '@constant/voteOption';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Vote = () => {
@@ -49,7 +50,7 @@ const Vote = () => {
     <>
       <StyledCenterTitle>내 친구는 어떤 이미지?</StyledCenterTitle>
       <StyledColItem>
-        {voteOption.map((optionPair, idx) => (
+        {voteList.map((pair, idx) => (
           <StyledRowItem key={idx}>
             {/* fist option */}
             <StyledButton
@@ -58,7 +59,10 @@ const Vote = () => {
               onClick={() => handleOptionClick(idx, 'a')}
               selected={selectedOptions[idx] === 'a'}
             >
-              <StyledText weight="bold">{optionPair[0]}</StyledText>
+              {/* option img */}
+              <StyledImage src={pair.left.src} $maxWidth="100px" />
+              {/* option text */}
+              <StyledText weight="bold">{pair.left.label}</StyledText>
             </StyledButton>
             {/* second option */}
             <StyledButton
@@ -67,7 +71,10 @@ const Vote = () => {
               onClick={() => handleOptionClick(idx, 'b')}
               selected={selectedOptions[idx] === 'b'}
             >
-              <StyledText weight="bold">{optionPair[1]}</StyledText>
+              {/* option img */}
+              <StyledImage src={pair.right.src} $maxWidth="100px" />
+              {/* option text */}
+              <StyledText weight="bold">{pair.right.label}</StyledText>
             </StyledButton>
           </StyledRowItem>
         ))}
