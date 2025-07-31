@@ -7,12 +7,27 @@ import {
   StyledLinkBox,
   StyledWobbleButton,
 } from '@styles/common.style';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createParticipant } from '@services/link';
 
 const Link = () => {
   const { id, gender } = useParams<GetResultProps>();
   const navigate = useNavigate();
   const voteUrl = `${window.location.origin}/vote/${id}/${gender}`;
+
+  useEffect(() => {
+    const createParticipantEffect = async () => {
+      try {
+        await createParticipant({ id: id, gender: gender });
+      } catch (err) {
+        console.log('Participate 생성 실패', err);
+      }
+    };
+    if (id && gender) {
+      createParticipantEffect();
+    }
+  }, [id, gender]);
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(voteUrl);
