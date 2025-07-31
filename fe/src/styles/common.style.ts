@@ -22,6 +22,7 @@ const sizeMap = {
 };
 
 export const StyledText = styled.p<TextProps>`
+  white-space: pre-line;
   text-align: ${({ align = 'center' }) => align || 'center'};
   margin: 0.5rem;
   font-size: ${({ size = 'md' }) => sizeMap[size]};

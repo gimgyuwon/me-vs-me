@@ -7,9 +7,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'TalkFont';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.1/SangSangShinb7.woff') format('woff');
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

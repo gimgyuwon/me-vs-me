@@ -18,7 +18,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '“나 괜찮아” 말해도, 너 괜찮은지가 더 중요함.',
     ],
     emoji: '(-_^)',
-    talk: '난 참견 안 해. 단지, 네가 또 울면 귀찮잖아. 그만 좀 울어.',
+    talk: '착각하지 마. 걱정하는 거 아냐. \n너 아니면 일 망칠까 봐 그런 거야.',
   },
   aaab: {
     title: '겉바속촉 재벌가 불량아',
@@ -30,7 +30,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '철벽 쳐도, 티 나는 다정함 숨기기 실패.',
     ],
     emoji: '(￢‿￢ )',
-    talk: '누가 챙겨달랬냐? 그냥… 그딴 표정 짓지 마, 보기 싫으니까.',
+    talk: '누가 챙겨달랬냐? \n그냥… 그딴 표정 짓지 마, 보기 싫으니까.',
   },
   aaba: {
     title: '겉바속촉 소시민 모범생',
@@ -42,7 +42,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '혼자 있을 땐 “오늘도 잘했어!” 셀프 토닥이 필수.',
     ],
     emoji: '(*´︶`*)',
-    talk: '똑바로 안 살 거면 내 눈앞에 나타나지도 마. 귀찮게 하지 말고.',
+    talk: '똑바로 안 살 거면 내 눈앞에 나타나지도 마. \n귀찮게 하지 말고.',
   },
   aabb: {
     title: '겉바속촉 소시민 불량아',
@@ -66,7 +66,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '결정은 빠르지만, 마음은 늘 상대방 먼저.',
     ],
     emoji: '(◕‿◕✿)',
-    talk: '조용히 일 처리하는 거, 나 특기야. 넌 그냥 믿고 따라와.',
+    talk: '조용히 일 처리하는 거, 내 특기야. \n넌 그냥 믿고 따라와.',
   },
   abab: {
     title: '겉촉속촉 재벌가 불량아',
@@ -78,7 +78,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '진심 알아봐주면 갑자기 핵진지해짐.',
     ],
     emoji: '(¬‿¬ )',
-    talk: '야, 내가 쓴 거 티나? 아 몰라 몰라. 결과만 좋으면 됐지.',
+    talk: '야, 내가 쓴 거 티나? \n아 몰라 몰라. 결과만 좋으면 됐지.',
   },
   abba: {
     title: '겉촉속촉 소시민 모범생',
@@ -102,7 +102,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '마음은 앞서는데, 입은 자꾸 반대 방향.',
     ],
     emoji: '(￣ヘ￣)',
-    talk: '와~ 나 또 이거 정리 다 해놨다고~ 진짜 나 없었으면 어쩔 뻔~',
+    talk: '와~ 나 또 이거 정리 다 해놨다고~ \n진짜 나 없었으면 어쩔 뻔~',
   },
   baaa: {
     title: '겉바속바 재벌가 모범생',
@@ -114,7 +114,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '단단한 이유? 무너지기 싫어서.',
     ],
     emoji: '(-‿- )',
-    talk: '나 정도 되면 뭐든 해결하지. 네 일도, 네 미래도.',
+    talk: '나 정도 되면 뭐든 해결하지. \n네 일도, 네 미래도.',
   },
   baab: {
     title: '겉바속바 재벌가 불량아',
@@ -126,7 +126,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '외로운데 외롭다 말 못 함… 그게 나.',
     ],
     emoji: '(╬ ಠ益ಠ)',
-    talk: '돈? 시간? 나 그런 거 많거든. 그러니까 그냥 붙어있어.',
+    talk: '돈? 시간? 나 그런 거 많거든. \n그러니까 그냥 붙어있어.',
   },
   baba: {
     title: '겉바속바 소시민 모범생',
@@ -138,7 +138,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '사실 고민 많음. 그냥 말 안 할 뿐.',
     ],
     emoji: '( •̀ ω •́ )',
-    talk: '무례한 말은 지양해주세요. 아무리 친해도 예의는 지켜야죠?',
+    talk: '무례한 말은 지양해주세요. \n아무리 친해도 예의는 지켜야죠?',
   },
   babb: {
     title: '겉바속바 소시민 불량아',
@@ -150,7 +150,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '다정하단 말 싫어하지만… 사실 제일 다정.',
     ],
     emoji: '(╯︵╰,)',
-    talk: '아이 몰라~ 대충 살자고, 인생 뭐 있냐. 어차피 다 거기서 거기야.',
+    talk: '아이 몰라~ 대충 살자고, 인생 뭐 있냐. \n어차피 다 거기서 거기야.',
   },
   bbaa: {
     title: '겉촉속바 재벌가 모범생',
@@ -162,7 +162,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '따뜻함과 냉철함의 밸런스 마스터.',
     ],
     emoji: '(•‿•)',
-    talk: '눈치 보지 마. 당신이 하고 싶은 거면, 내가 뒤에 있어줄게.',
+    talk: '눈치 보지 마. \n당신이 하고 싶은 거면, 내가 뒤에 있어줄게.',
   },
   bbab: {
     title: '겉촉속바 재벌가 불량아',
@@ -174,7 +174,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '“나 괜찮아”에 진심 10% 섞여 있음.',
     ],
     emoji: '(¬_¬ )',
-    talk: '헐~ 진짜 울어? 야야 울지 마, 나 진짜 그런 거 못 봐...',
+    talk: '헐~ 진짜 울어? 야야 울지 마, \n나 진짜 그런 거 못 봐...',
   },
   bbba: {
     title: '겉촉속바 소시민 모범생',
@@ -186,7 +186,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '한결같은 성실함에 믿음이 생김.',
     ],
     emoji: '(｡•ᴗ•｡)',
-    talk: '괜찮아요. 실수해도, 넘어져도... 제가 다 갚아줄거니까',
+    talk: '괜찮아요. 실수해도, 넘어져도... \n제가 다 갚아줄거니까',
   },
   bbbb: {
     title: '겉촉속바 소시민 불량아',
@@ -198,7 +198,7 @@ export const RESULT_DESCRIPMATION_MAP: Record<
       '티는 안 내지만, 마음은 그쪽 향해 있음.',
     ],
     emoji: '(￣︿￣;)',
-    talk: '뭐어~ 너 힘들면 걍 말하지, 왜 맨날 웃고 그래. 짜증나게…',
+    talk: '뭐어~ 너 힘들면 걍 말하지, \n왜 맨날 웃고 그래. 짜증나게…',
   },
 };
 

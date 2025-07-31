@@ -14,7 +14,7 @@ import {
 } from '@constant/resultMap';
 
 const Result = () => {
-  const resultKey = 'aaaa';
+  const resultKey = 'bbab';
   const good = RESULT_COMPATIBILITY_MAP[resultKey].good;
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
   return (
@@ -28,10 +28,10 @@ const Result = () => {
       <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].summary}</StyledText>
       {/* speech bubble */}
       <StyledSpeechBubble>
-        <StyledText fontFamily="TalkFont" size="lg" weight="bold">
+        <StyledText fontFamily="TalkFont" size="md" weight="bold">
           {RESULT_DESCRIPMATION_MAP[resultKey].talk}
         </StyledText>
-        <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
+        {/* <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText> */}
       </StyledSpeechBubble>
       {/* image */}
       <StyledImage
