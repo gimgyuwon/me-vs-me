@@ -54,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    'https://me-vs-me.vercel.app',
     'http://localhost:5173',
 ]
 
