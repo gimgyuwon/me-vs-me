@@ -32,26 +32,26 @@ export const StyledText = styled.p<TextProps>`
 `;
 
 interface BoxProps {
-  maxWidth?: string;
-  bgColor?: string;
-  borderWidth?: string;
-  borderColor?: string;
-  borderStyle?: string;
-  borderRadius?: string;
-  paddingTB?: string;
-  paddingRL?: string;
+  $maxWidth?: string;
+  $bgColor?: string;
+  $borderWidth?: string;
+  $borderColor?: string;
+  $borderStyle?: string;
+  $borderRadius?: string;
+  $paddingTB?: string;
+  $paddingRL?: string;
 }
 
 export const StyledBox = styled.div<BoxProps>`
-  max-width: ${({ maxWidth }) => maxWidth || '100%'};
-  background-color: ${({ bgColor }) => bgColor || 'inherit'};
-  border-width: ${({ borderWidth }) => borderWidth || '0'};
-  border-style: ${({ borderStyle }) => borderStyle || 'none'};
-  border-color: ${({ borderColor }) => borderColor || 'transparent'};
-  border-radius: ${({ borderRadius }) => borderRadius || '0px'};
+  max-width: ${({ $maxWidth }) => $maxWidth || '100%'};
+  background-color: ${({ $bgColor }) => $bgColor || 'inherit'};
+  border-width: ${({ $borderWidth }) => $borderWidth || '0'};
+  border-style: ${({ $borderStyle }) => $borderStyle || 'none'};
+  border-color: ${({ $borderColor }) => $borderColor || 'transparent'};
+  border-radius: ${({ $borderRadius }) => $borderRadius || '0px'};
   margin: 1rem auto;
-  padding: ${({ paddingTB = '0', paddingRL = '0' }) =>
-    `${paddingTB} ${paddingRL}`};
+  padding: ${({ $paddingTB = '0', $paddingRL = '0' }) =>
+    `${$paddingTB} ${$paddingRL}`};
 `;
 
 export const StyledColItem = styled.div`
@@ -136,16 +136,16 @@ export const StyledLinkBox = styled.p`
 `;
 
 interface buttonProps {
-  bgColor?: string;
-  textColor?: string;
+  $bgColor?: string;
+  $textColor?: string;
 }
 
 export const StyledButton = styled.button<buttonProps>`
   width: 350px;
   height: 50px;
   margin: 1rem auto;
-  background-color: ${({ bgColor }) => bgColor || '#fff'};
-  color: ${({ textColor }) => textColor || '#000'};
+  background-color: ${({ $bgColor }) => $bgColor || '#fff'};
+  color: ${({ $textColor }) => $textColor || '#000'};
   font-size: 1.2rem;
   display: flex;
   justify-content: center;

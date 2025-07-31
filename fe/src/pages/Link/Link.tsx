@@ -27,7 +27,7 @@ const Link = () => {
       <StyledCenterTitle>링크가 생성되었어요!</StyledCenterTitle>
       <StyledText>친구들에게 공유해서 나에 대한 생각을 들어보세요</StyledText>
       <StyledLinkBox>{voteUrl}</StyledLinkBox>
-      <StyledButton bgColor="#000" textColor="#fff" onClick={handleCopyClick}>
+      <StyledButton $bgColor="#000" $textColor="#fff" onClick={handleCopyClick}>
         링크 복사
       </StyledButton>
       <StyledWobbleButton onClick={handleResultCheckClick}>

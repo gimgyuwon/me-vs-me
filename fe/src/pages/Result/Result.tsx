@@ -17,10 +17,14 @@ const Result = () => {
   const resultKey = 'bbab';
   const good = RESULT_COMPATIBILITY_MAP[resultKey].good;
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
+  const vote_num = 3;
   return (
     <>
       {/* title */}
-      <StyledText>친구들이 선택한 나의 모습</StyledText>
+      <StyledText size="lg" weight="bold">
+        친구 {vote_num}명이 <br />
+        선택한 내 캐릭터는?
+      </StyledText>
       <StyledCenterTitle>
         {RESULT_DESCRIPMATION_MAP[resultKey].title}
       </StyledCenterTitle>
@@ -40,7 +44,7 @@ const Result = () => {
         $maxWidth="300px"
       />
       {/* description */}
-      <StyledBox bgColor="#ccc" paddingTB="0.5rem" paddingRL="0.5rem">
+      <StyledBox $bgColor="#e0e0e0" $paddingTB="0.5rem" $paddingRL="0.5rem">
         {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
           <StyledText size="sm" align="start" key={idx}>
             {' '}
@@ -74,7 +78,9 @@ const Result = () => {
         </StyledColItem>
       </StyledRowItem>
       {/* save button */}
-      <StyledButton>친구들한테 공유하기</StyledButton>
+      <StyledButton $bgColor="#000" $textColor="#fff">
+        내 캐릭터 캡쳐하기
+      </StyledButton>
     </>
   );
 };
