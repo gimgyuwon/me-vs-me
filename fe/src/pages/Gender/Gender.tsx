@@ -6,15 +6,14 @@ import {
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { nanoid } from 'nanoid';
+import { GenderType } from '@interfaces/gender';
 
 const Gender = () => {
   const id = nanoid();
   const navigate = useNavigate();
-  const [selectGender, setSelectGender] = useState<'male' | 'female' | null>(
-    null,
-  );
+  const [selectGender, setSelectGender] = useState<GenderType>(null);
 
-  const handleClick = (gender: 'male' | 'female') => {
+  const handleClick = (gender: GenderType) => {
     setSelectGender(gender);
     navigate(`/link/${id}/${gender}`);
   };

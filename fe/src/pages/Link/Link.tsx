@@ -1,3 +1,4 @@
+import { GetResultProps } from '@interfaces/result';
 import {
   StyledButton,
   StyledText,
@@ -9,7 +10,7 @@ import {
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const Link = () => {
-  const { id, gender } = useParams();
+  const { id, gender } = useParams<GetResultProps>();
   const navigate = useNavigate();
   const voteUrl = `${window.location.origin}/vote/${id}/${gender}`;
 

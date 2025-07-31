@@ -11,11 +11,12 @@ import { useState } from 'react';
 import { voteList } from '@constant/voteOption';
 import { useNavigate, useParams } from 'react-router-dom';
 import { submitVote } from '@services/vote';
+import { GetResultProps } from '@interfaces/result';
 
 const Vote = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { id, gender } = useParams();
+  const { id, gender } = useParams<GetResultProps>();
   const [selectedOptions, setSelectedOptions] = useState<(string | null)[]>([
     null,
     null,
