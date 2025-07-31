@@ -1,6 +1,16 @@
 export const voteSvgUrl = '/images/vote/';
 
-export const voteList = [
+interface VoteOptionProps {
+  label: string;
+  src: string;
+}
+
+interface VoteListProps {
+  left: VoteOptionProps;
+  right: VoteOptionProps;
+}
+
+export const voteList: VoteListProps[] = [
   {
     left: { label: '재벌 3세', src: voteSvgUrl + 'rich.svg' },
     right: { label: '소시민', src: voteSvgUrl + 'citizen.svg' },
