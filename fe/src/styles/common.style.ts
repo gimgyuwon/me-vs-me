@@ -182,9 +182,8 @@ export const StyledWobbleButton = styled.button<buttonProps>`
   font-size: 1.2rem;
   font-weight: bold;
 
-  border: 2px solid #000;
+  border: 2px dashed ${({ $textColor }) => $textColor || '#000'};
   border-radius: 999px;
-  border-style: dashed;
 
   animation: ${wobble} 1s infinite;
   transition: background-color 0.3s ease;

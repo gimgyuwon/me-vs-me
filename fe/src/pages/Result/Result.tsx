@@ -1,5 +1,6 @@
 import {
   StyledButton,
+  StyledWobbleButton,
   StyledText,
   StyledCenterTitle,
   StyledImage,
@@ -19,7 +20,12 @@ const Result = () => {
   const good = RESULT_COMPATIBILITY_MAP[resultKey].good;
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
   const vote_num = 3;
-  const navigator = useNavigate();
+  const currUrl = window.location.href;
+  const navigate = useNavigate();
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(currUrl);
+  };
 
   return (
     <>
@@ -80,11 +86,19 @@ const Result = () => {
           </StyledText>
         </StyledColItem>
       </StyledRowItem>
+      {/* copy button */}
+      <StyledWobbleButton
+        $bgColor="#fff"
+        $textColor="#000"
+        onClick={handleCopyClick}
+      >
+        결과 링크 복사하기
+      </StyledWobbleButton>
       {/* save button */}
       <StyledButton
         $bgColor="#000"
         $textColor="#fff"
-        onClick={() => navigator('/')}
+        onClick={() => navigate('/')}
       >
         처음으로
       </StyledButton>
