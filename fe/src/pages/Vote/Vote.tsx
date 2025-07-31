@@ -12,6 +12,7 @@ import { voteList } from '@constant/voteOption';
 import { useNavigate, useParams } from 'react-router-dom';
 import { submitVote } from '@services/vote';
 import { GetResultProps } from '@interfaces/result';
+import { Helmet } from 'react-helmet-async';
 
 const Vote = () => {
   const [loading, setLoading] = useState(false);
@@ -50,6 +51,13 @@ const Vote = () => {
 
   return (
     <>
+      <Helmet>
+        <title>남이 보는 나는 | 투표하기</title>
+        <meta
+          name="description"
+          content="내 친구는 어떤 이미지인지 투표하는 페이지"
+        />
+      </Helmet>
       <StyledCenterTitle>내 친구는 어떤 이미지?</StyledCenterTitle>
       <StyledColItem>
         {voteList.map((pair, idx) => (

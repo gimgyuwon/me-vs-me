@@ -17,6 +17,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getResult } from '@services/result';
 import { GetResultProps, ResultProps } from '@interfaces/result';
+import { Helmet } from 'react-helmet-async';
 
 const Result = () => {
   const navigate = useNavigate();
@@ -68,6 +69,14 @@ const Result = () => {
 
   return (
     <>
+      <Helmet>
+        <title>남이 보는 나는 | 투표 결과</title>
+        <meta
+          name="description"
+          content="내 친구들이 나를 어떻게 보는지 투표 결과를 확인하는 페이지"
+        />
+      </Helmet>
+
       {/* title */}
       <StyledText size="lg" weight="bold">
         친구 {voteNum}명이 <br />
