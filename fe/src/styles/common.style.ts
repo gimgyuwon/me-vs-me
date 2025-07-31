@@ -31,20 +31,24 @@ export const StyledText = styled.p<TextProps>`
 `;
 
 interface BoxProps {
+  maxWidth?: string;
   bgColor?: string;
   borderWidth?: string;
   borderColor?: string;
   borderStyle?: string;
+  borderRadius?: string;
   paddingTB?: string;
   paddingRL?: string;
 }
 
 export const StyledBox = styled.div<BoxProps>`
+  max-width: ${({ maxWidth }) => maxWidth || '100%'};
   background-color: ${({ bgColor }) => bgColor || 'inherit'};
   border-width: ${({ borderWidth }) => borderWidth || '0'};
   border-style: ${({ borderStyle }) => borderStyle || 'none'};
   border-color: ${({ borderColor }) => borderColor || 'transparent'};
-  margin: 1rem 0.5rem;
+  border-radius: ${({ borderRadius }) => borderRadius || '0px'};
+  margin: 1rem auto;
   padding: ${({ paddingTB = '0', paddingRL = '0' }) =>
     `${paddingTB} ${paddingRL}`};
 `;
@@ -80,6 +84,41 @@ export const StyledRowItem = styled.div`
   justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
+`;
+
+export const StyledSpeechBubble = styled.div`
+  position: relative;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 300px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #fff;
+    border-left: 0;
+    margin-top: -10px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #000;
+    border-left: 0;
+    margin-top: -10px;
+  }
 `;
 
 interface StyledImageProps {

@@ -6,6 +6,7 @@ import {
   StyledColItem,
   StyledRowItem,
   StyledBox,
+  StyledSpeechBubble,
 } from '@styles/common.style';
 import {
   RESULT_COMPATIBILITY_MAP,
@@ -13,7 +14,7 @@ import {
 } from '@constant/resultMap';
 
 const Result = () => {
-  const resultKey = 'aaab';
+  const resultKey = 'aaaa';
   const good = RESULT_COMPATIBILITY_MAP[resultKey].good;
   const bad = RESULT_COMPATIBILITY_MAP[resultKey].bad;
   return (
@@ -23,17 +24,27 @@ const Result = () => {
         {RESULT_DESCRIPMATION_MAP[resultKey].title}
       </StyledCenterTitle>
       <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].summary}</StyledText>
+      <StyledSpeechBubble>
+        <StyledText fontFamily="TalkFont" size="lg" weight="bold">
+          {RESULT_DESCRIPMATION_MAP[resultKey].talk}
+        </StyledText>
+      </StyledSpeechBubble>
+
       <StyledImage
         src={`/images/result_male/${resultKey}.svg`}
         alt={resultKey}
         $maxWidth="300px"
       />
-      <StyledBox borderWidth="2px" borderColor="#000" borderStyle="solid">
+      <StyledBox
+        maxWidth="100px"
+        borderWidth="2px"
+        borderColor="#000"
+        borderStyle="solid"
+        borderRadius="999px"
+        paddingRL=""
+      >
         <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
       </StyledBox>
-      <StyledText fontFamily="TalkFont" size="lg" weight="bold">
-        {RESULT_DESCRIPMATION_MAP[resultKey].talk}
-      </StyledText>
 
       <StyledBox bgColor="#ccc" paddingTB="0.5rem" paddingRL="0.5rem">
         {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
