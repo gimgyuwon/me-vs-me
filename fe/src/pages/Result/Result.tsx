@@ -33,7 +33,7 @@ const Result = () => {
   useEffect(() => {
     const fetchResult = async () => {
       try {
-        const response = await axios.get<ResultProps>('/api/result');
+        const response = await axios.get<ResultProps>('/api/result/');
         setResultData(response.data);
       } catch (err: any) {
         setError(err.message || '결과 데이터를 불러오는데 실패했습니다.');
