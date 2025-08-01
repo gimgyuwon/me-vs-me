@@ -124,7 +124,7 @@ const Result = () => {
           <StyledText>내 친구 사대천왕</StyledText>
           {gender === 'male' ? (
             <StyledImage
-              src={`/images/result_female/${good}.svg`}
+              src={`/images/result_male/${good}.svg`}
               $maxWidth="200px"
             />
           ) : (

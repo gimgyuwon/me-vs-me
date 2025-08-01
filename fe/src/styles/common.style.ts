@@ -3,7 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 export const StyledCenterTitle = styled.h1`
   font-size: 1.5rem;
   text-align: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
 `;
 
 interface TextProps {
@@ -124,7 +124,8 @@ export const StyledLinkBox = styled.p`
   font-size: 1rem;
   width: 350px;
   height: 50px;
-  text-align: center;
+  text-align: start;
+  white-space: nowrap;
   align-content: center;
   margin: 1rem auto;
   padding: 0rem;
@@ -137,7 +138,8 @@ export const StyledLinkBox = styled.p`
 interface buttonProps {
   $bgColor?: string;
   $textColor?: string;
-  $maxWidth?: string;
+  $width?: string;
+  $borderRadius?: string;
   selected?: boolean;
 }
 const wobble = keyframes`
@@ -148,10 +150,14 @@ const wobble = keyframes`
 
 export const StyledButton = styled.button<buttonProps>`
   width: 100%;
-  max-width: ${({ $maxWidth }) => $maxWidth || '100%'};
-  width: 150px;
+  width: ${({ $width }) => $width || '100%'};
+  min-width: 150px;
+  min-height: 50px;
   height: auto;
+
+  padding: 0.75rem;
   margin: 1rem auto;
+
   background-color: ${({ $bgColor }) => $bgColor || '#fff'};
   color: ${({ $textColor }) => $textColor || '#000'};
   font-size: 1.2rem;
@@ -160,7 +166,7 @@ export const StyledButton = styled.button<buttonProps>`
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 19px;
+  border-radius: ${({ $borderRadius }) => $borderRadius || '999px'};
   border: ${({ $textColor, selected }) =>
     selected
       ? `3px solid ${$textColor || '#000'}`
@@ -180,9 +186,12 @@ export const StyledButton = styled.button<buttonProps>`
 
 export const StyledWobbleButton = styled.button<buttonProps>`
   position: relative;
-  padding: 0.75rem 1.5rem;
-  margin: 1rem auto;
-  width: 350px;
+  padding: 0.75rem;
+  margin: 1rem 0rem;
+
+  width: ${({ $width }) => $width || '100%'};
+  min-width: 150px;
+  min-height: 50px;
 
   background-color: ${({ $bgColor }) => $bgColor || '#fff'};
   color: ${({ $textColor }) => $textColor || '#000'};
@@ -195,7 +204,7 @@ export const StyledWobbleButton = styled.button<buttonProps>`
   font-weight: bold;
 
   border: 2px dashed ${({ $textColor }) => $textColor || '#000'};
-  border-radius: 999px;
+  border-radius: ${({ $borderRadius }) => $borderRadius || '999px'};
 
   animation: ${wobble} 1s infinite;
   transition: background-color 0.3s ease;

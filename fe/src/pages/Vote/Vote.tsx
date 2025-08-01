@@ -66,6 +66,8 @@ const Vote = () => {
             <StyledButton
               $bgColor="#fff"
               $textColor="#000"
+              $width="180px"
+              $borderRadius="10px"
               onClick={() => handleOptionClick(idx, 'a')}
               selected={selectedOptions[idx] === 'a'}
             >
@@ -78,6 +80,8 @@ const Vote = () => {
             <StyledButton
               $bgColor="#fff"
               $textColor="#000"
+              $width="180px"
+              $borderRadius="10px"
               onClick={() => handleOptionClick(idx, 'b')}
               selected={selectedOptions[idx] === 'b'}
             >
