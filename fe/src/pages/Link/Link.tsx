@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createParticipant } from '@services/link';
 import { Helmet } from 'react-helmet-async';
+import axios from 'axios';
 
 const Link = () => {
   const { id, gender } = useParams<GetResultProps>();
@@ -21,6 +22,23 @@ const Link = () => {
     const createParticipantEffect = async () => {
       try {
         await createParticipant({ id: id, gender: gender });
+        // retry
+        let confirmed = false;
+        let retries = 5;
+        while (!confirmed && retries-- > 0) {
+          try {
+            confirmed = await createParticipant({ id: id, gender: gender });
+            if (!confirmed) {
+              await new Promise((res) => setTimeout(res, 500));
+            }
+          } catch {
+            await new Promise((res) => setTimeout(res, 500));
+          }
+        }
+        // warning message to delay db
+        if (!confirmed) {
+          console.warn('participant가 DB에 반영되지 않았습니다.');
+        }
       } catch (err) {
         console.log('Participate 생성 실패', err);
       }
