@@ -23,6 +23,10 @@ def create_participant(request):
         participant.gender = gender
         participant.save()
 
+    confirmed = Participant.objects.filter(id = id).exists()
+    if not confirmed:
+        return JsonResponse({'error': 'DB commit delay'}, status=500)
+
     return JsonResponse({'message': 'Participant created'})
 
 
