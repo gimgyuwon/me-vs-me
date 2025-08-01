@@ -95,11 +95,19 @@ const Result = () => {
         <StyledText>{RESULT_DESCRIPMATION_MAP[resultKey].emoji}</StyledText>
       </StyledSpeechBubble>
       {/* image */}
-      <StyledImage
-        src={`/images/result_male/${resultKey}.svg`}
-        alt={resultKey}
-        $maxWidth="300px"
-      />
+      {gender === 'male' ? (
+        <StyledImage
+          src={`/images/result_male/${resultKey}.svg`}
+          alt={resultKey}
+          $maxWidth="300px"
+        />
+      ) : (
+        <StyledImage
+          src={`/images/result_female/${resultKey}.svg`}
+          alt={resultKey}
+          $maxWidth="300px"
+        />
+      )}
       {/* description */}
       <StyledBox $bgColor="#e0e0e0" $paddingTB="0.5rem" $paddingRL="0.5rem">
         {RESULT_DESCRIPMATION_MAP[resultKey].description.map((line, idx) => (
@@ -114,10 +122,17 @@ const Result = () => {
         {/* good */}
         <StyledColItem>
           <StyledText>내 친구 사대천왕</StyledText>
-          <StyledImage
-            src={`/images/result_male/${good}.svg`}
-            $maxWidth="200px"
-          />
+          {gender === 'male' ? (
+            <StyledImage
+              src={`/images/result_female/${good}.svg`}
+              $maxWidth="200px"
+            />
+          ) : (
+            <StyledImage
+              src={`/images/result_female/${good}.svg`}
+              $maxWidth="200px"
+            />
+          )}
           <StyledText size="sm">
             {RESULT_DESCRIPMATION_MAP[good].title}
           </StyledText>
@@ -125,10 +140,17 @@ const Result = () => {
         {/* bad */}
         <StyledColItem>
           <StyledText>운명의 앙숙</StyledText>
-          <StyledImage
-            src={`/images/result_male/${bad}.svg`}
-            $maxWidth="200px"
-          />
+          {gender === 'male' ? (
+            <StyledImage
+              src={`/images/result_male/${bad}.svg`}
+              $maxWidth="200px"
+            />
+          ) : (
+            <StyledImage
+              src={`/images/result_female/${bad}.svg`}
+              $maxWidth="200px"
+            />
+          )}
           <StyledText size="sm">
             {RESULT_DESCRIPMATION_MAP[bad].title}
           </StyledText>
