@@ -22,8 +22,8 @@
   <img src="https://velog.velcdn.com/images/gimgyuwon/post/354de1aa-fe03-4459-8325-0877ac8c5ba7/image.gif" width="300" />
   <br />
   <img src="https://velog.velcdn.com/images/gimgyuwon/post/e20b16fb-1f4d-4b23-8d97-16d708cbf3a4/image.gif" width="300" />
-  <img src="https://velog.velcdn.com/images/gimgyuwon/post/36e6eeb5-4337-4415-b114-94f44bb4d770/image.gif" width="300" />
-  <img src="https://velog.velcdn.com/images/gimgyuwon/post/9768df60-4d65-41ad-8c14-6315442a7c1c/image.gif" width="300" />
+  <img src="https://velog.velcdn.com/images/gimgyuwon/post/d51fc247-d993-4e73-89b4-0681edda0ca3/image.gif" width="300" />
+  <img src="https://velog.velcdn.com/images/gimgyuwon/post/b54345ea-7e6b-4a03-a0f8-3df56797fff4/image.gif" width="300" />
 </div>
 
 ---
