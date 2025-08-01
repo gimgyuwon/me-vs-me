@@ -30,8 +30,13 @@ const Link = () => {
     }
   }, [id, gender]);
 
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText(voteUrl);
+  const handleCopyClick = async () => {
+    try {
+      await navigator.clipboard.writeText(voteUrl);
+      alert('투표 링크가 복사되었어요');
+    } catch {
+      alert('복사에 실패했어요. 다시 시도해주세요.');
+    }
   };
 
   const handleResultCheckClick = () => {
