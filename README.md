@@ -32,4 +32,4 @@
 
 - **Frontend**: React, Styled-Components
 - **Backend**: Django REST Framework
-- **Deployment**: Vercel (Frontend), Render (Backend)
+- **Deployment**: Vercel (Frontend), Northflank (Backend)
